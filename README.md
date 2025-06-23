@@ -59,8 +59,11 @@ Create a `.env` file in the root directory with the following variables:
 - Required environment variables will be listed here
 - Refer to `.env.example` for a template
 
-## Demo [![Watch the video](https://img.youtube.com/vi/JX85doSloPg/hqdefault.jpg)](https://youtu.be/JX85doSloPg)
+## Demo 
 
+
+
+https://github.com/user-attachments/assets/d05f894c-4977-4898-a7e3-3b82b8fe97c3
 
 
 
