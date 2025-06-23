@@ -1,0 +1,61 @@
+## SJC 2c, 1C, 5 phân  
+* Giá vàng được cập nhật lúc: 10h30 ngày 23/6/2025
+* Mức độ chênh lệch giá mua và giá bán hôm nay được so sánh với ngày hôm qua
+* Giá vàng thế giới tính bằng USD/ounce
+## Biểu đồ giá vàng 30 ngày gần nhất
+SJC 2c, 1C, 5 phân
+###  [Nơi người dân dùng vàng thay tiền mặt ](https://vnexpress.net/noi-nguoi-dan-dung-vang-thay-tien-mat-4903916.html "Nơi người dân dùng vàng thay tiền mặt")
+[ Ở thị trấn khai thác mỏ El Dorado, vàng là phương tiện giao dịch phổ biến của người dân bởi đồng bolivar mất giá nghiêm trọng. ](https://vnexpress.net/noi-nguoi-dan-dung-vang-thay-tien-mat-4903916.html "Nơi người dân dùng vàng thay tiền mặt")
+###  [Giá bạc miếng trong nước lập đỉnh ](https://vnexpress.net/gia-bac-mieng-trong-nuoc-lap-dinh-4903583.html "Giá bạc miếng trong nước lập đỉnh")
+[ Giá bạc miếng trong nước tăng mạnh trong hai tuần trở lại đây lên vùng giá cao nhất từ trước đến nay, hơn 1,45 triệu đồng mỗi lượng. ](https://vnexpress.net/gia-bac-mieng-trong-nuoc-lap-dinh-4903583.html "Giá bạc miếng trong nước lập đỉnh")
+###  [Các ngân hàng trung ương chuộng vàng hơn USD ](https://vnexpress.net/cac-ngan-hang-trung-uong-chuong-vang-hon-usd-4899937.html "Các ngân hàng trung ương chuộng vàng hơn USD")
+[ Khảo sát của Hội đồng Vàng Thế giới cho thấy đa số ngân hàng trung ương muốn tăng tỷ trọng vàng và giảm USD trong dự trữ ngoại hối 5 năm tới. ](https://vnexpress.net/cac-ngan-hang-trung-uong-chuong-vang-hon-usd-4899937.html "Các ngân hàng trung ương chuộng vàng hơn USD")
+###  [Giá vàng miếng tăng ngày thứ năm liên tiếp ](https://vnexpress.net/gia-vang-mieng-tang-ngay-thu-nam-lien-tiep-4898733.html "Giá vàng miếng tăng ngày thứ năm liên tiếp")
+[ Giá vàng miếng SJC vượt ngưỡng 120 triệu đồng sáng nay, đánh dấu phiên tăng thứ năm liên tiếp. ](https://vnexpress.net/gia-vang-mieng-tang-ngay-thu-nam-lien-tiep-4898733.html "Giá vàng miếng tăng ngày thứ năm liên tiếp")
+###  [Giá vàng miếng lên cao nhất hai tuần ](https://vnexpress.net/gia-vang-trong-nuoc-len-cao-nhat-hai-tuan-4898313.html "Giá vàng miếng lên cao nhất hai tuần")
+[ Giá vàng miếng tăng 1 triệu đồng mỗi lượng lên hơn 120 triệu, cao nhất hai tuần và giữ mức chênh lệch 11,5 triệu đồng so với thế giới. ](https://vnexpress.net/gia-vang-trong-nuoc-len-cao-nhat-hai-tuan-4898313.html "Giá vàng miếng lên cao nhất hai tuần")
+###  [Giá vàng, dầu tăng vọt vì Israel không kích Iran ](https://vnexpress.net/gia-vang-dau-tang-vot-vi-israel-khong-kich-iran-4898301.html "Giá vàng, dầu tăng vọt vì Israel không kích Iran")
+[ Giá vàng tăng hơn 50 USD một ounce, trong khi dầu thô WTI và Brent đều lên hơn 11% vì xung đột mới nhất tại Trung Đông. ](https://vnexpress.net/gia-vang-dau-tang-vot-vi-israel-khong-kich-iran-4898301.html "Giá vàng, dầu tăng vọt vì Israel không kích Iran")
+###  [Ngân hàng Nhà nước sắp xóa độc quyền vàng miếng ](https://vnexpress.net/ngan-hang-nha-nuoc-se-xoa-doc-quyen-vang-mieng-4897486.html "Ngân hàng Nhà nước sắp xóa độc quyền vàng miếng")
+[ Cục trưởng Quản lý ngoại hối Đào Xuân Tuấn cho biết Dự thảo Nghị định 24 đã hoàn thiện, theo hướng ngoài SJC có thêm đơn vị khác sản xuất vàng miếng. ](https://vnexpress.net/ngan-hang-nha-nuoc-se-xoa-doc-quyen-vang-mieng-4897486.html "Ngân hàng Nhà nước sắp xóa độc quyền vàng miếng")
+###  [Giá vàng thế giới dự báo tăng tuần này ](https://vnexpress.net/gia-vang-the-gioi-du-bao-tang-tuan-nay-4896153.html "Giá vàng thế giới dự báo tăng tuần này")
+[ USD yếu đi, xung đột Nga - Ukraine vẫn căng thẳng, thương chiến thuế quan chưa có hồi kết khiến các chuyên gia tin giá vàng còn tăng. ](https://vnexpress.net/gia-vang-the-gioi-du-bao-tang-tuan-nay-4896153.html "Giá vàng thế giới dự báo tăng tuần này")
+###  [Các ngân hàng cảnh báo thủ đoạn lừa đảo mua bán vàng ](https://vnexpress.net/cac-ngan-hang-canh-bao-thu-doan-lua-dao-mua-ban-vang-4896009.html "Các ngân hàng cảnh báo thủ đoạn lừa đảo mua bán vàng")
+[ Các nhà băng đồng loạt cảnh báo hiện tượng giả mạo doanh nghiệp kinh doanh vàng và ngân hàng để lừa đảo, khuyến cáo khách hàng nâng cao cảnh giác. ](https://vnexpress.net/cac-ngan-hang-canh-bao-thu-doan-lua-dao-mua-ban-vang-4896009.html "Các ngân hàng cảnh báo thủ đoạn lừa đảo mua bán vàng")
+###  [Giá vàng miếng trong nước đắt hơn thế giới 12 triệu đồng ](https://vnexpress.net/gia-vang-mieng-trong-nuoc-dat-hon-the-gioi-12-trieu-dong-4895752.html "Giá vàng miếng trong nước đắt hơn thế giới 12 triệu đồng")
+[ Vàng miếng trong nước sáng nay giảm 800.000 đồng còn 117,2 triệu một lượng, vênh 12 triệu so với thế giới. ](https://vnexpress.net/gia-vang-mieng-trong-nuoc-dat-hon-the-gioi-12-trieu-dong-4895752.html "Giá vàng miếng trong nước đắt hơn thế giới 12 triệu đồng")
+###  [Giá vàng thế giới tăng cao nhất gần 1 tháng ](https://vnexpress.net/gia-vang-the-gioi-tang-cao-nhat-gan-1-thang-4893698.html "Giá vàng thế giới tăng cao nhất gần 1 tháng")
+[ Mỗi ounce vàng tăng gần 100 USD, lên cao nhất 3 tuần do nhu cầu trú ẩn của nhà đầu tư. ](https://vnexpress.net/gia-vang-the-gioi-tang-cao-nhat-gan-1-thang-4893698.html "Giá vàng thế giới tăng cao nhất gần 1 tháng")
+###  [Giá vàng miếng đảo chiều tăng gần một triệu đồng ](https://vnexpress.net/vang-mieng-giam-ve-117-trieu-dong-4893419.html "Giá vàng miếng đảo chiều tăng gần một triệu đồng")
+[ Sau khi giảm khoảng một triệu đồng vào buổi trưa, giá vàng miếng chiều nay đảo chiều tăng 800.000 đồng, lên sát 118 triệu đồng mỗi lượng. ](https://vnexpress.net/vang-mieng-giam-ve-117-trieu-dong-4893419.html "Giá vàng miếng đảo chiều tăng gần một triệu đồng")
+###  [Giá vàng tuần này có thể tăng ](https://vnexpress.net/gia-vang-tuan-toi-co-the-tang-4893131.html "Giá vàng tuần này có thể tăng")
+[ Sau tuần tích lũy, chuyên gia Phố Wall và nhà đầu tư cá nhân đồng thuận giá vàng có khả năng tăng trở lại. ](https://vnexpress.net/gia-vang-tuan-toi-co-the-tang-4893131.html "Giá vàng tuần này có thể tăng")
+###  [Giá vàng miếng đảo chiều tăng nửa triệu đồng ](https://vnexpress.net/gia-vang-trong-nuoc-xuong-thap-nhat-mot-thang-4891888.html "Giá vàng miếng đảo chiều tăng nửa triệu đồng")
+[ Mỗi lượng vàng miếng tăng nửa triệu đồng lên 118 triệu, sau khi đã giảm 1 triệu đồng trong buổi sáng về mức thấp nhất một tháng. ](https://vnexpress.net/gia-vang-trong-nuoc-xuong-thap-nhat-mot-thang-4891888.html "Giá vàng miếng đảo chiều tăng nửa triệu đồng")
+###  [Chứng khoán tăng, vàng giảm khi tòa chặn thuế đối ứng của Mỹ ](https://vnexpress.net/chung-khoan-tang-vang-giam-khi-toa-chan-thue-doi-ung-cua-my-4891785.html "Chứng khoán tăng, vàng giảm khi tòa chặn thuế đối ứng của Mỹ")
+[ Thị trường chứng khoán Nhật Bản, Hàn Quốc bật tăng, trong khi giá vàng giảm hơn 30 USD sau thông tin thuế đối ứng của ông Trump bị chặn lại. ](https://vnexpress.net/chung-khoan-tang-vang-giam-khi-toa-chan-thue-doi-ung-cua-my-4891785.html "Chứng khoán tăng, vàng giảm khi tòa chặn thuế đối ứng của Mỹ")
+###  [Giới siêu giàu chuộng gửi vàng ở Singapore ](https://vnexpress.net/gioi-sieu-giau-chuong-gui-vang-o-singapore-4891039.html "Giới siêu giàu chuộng gửi vàng ở Singapore")
+[ Giữa bất ổn kinh tế và địa chính trị toàn cầu, Singapore đang dần trở thành nơi chứa vàng an toàn của giới nhà giàu. ](https://vnexpress.net/gioi-sieu-giau-chuong-gui-vang-o-singapore-4891039.html "Giới siêu giàu chuộng gửi vàng ở Singapore")
+###  [Giá vàng miếng giảm 2 triệu đồng đầu tuần ](https://vnexpress.net/gia-vang-mieng-giam-1-trieu-dong-dau-tuan-4890514.html "Giá vàng miếng giảm 2 triệu đồng đầu tuần")
+[ Sau khi giảm một triệu, chiều nay, giá vàng miếng giảm thêm 1 triệu đồng xuống dưới 120 triệu đồng một lượng. ](https://vnexpress.net/gia-vang-mieng-giam-1-trieu-dong-dau-tuan-4890514.html "Giá vàng miếng giảm 2 triệu đồng đầu tuần")
+###  [Nghiên cứu lập sàn giao dịch vàng ](https://vnexpress.net/nghien-cuu-lap-san-giao-dich-vang-4890123.html "Nghiên cứu lập sàn giao dịch vàng")
+[ Thủ tướng giao Ngân hàng Nhà nước, Bộ Tài chính nghiên cứu lập sàn giao dịch vàng theo hướng người dân được tự do giao dịch. ](https://vnexpress.net/nghien-cuu-lap-san-giao-dich-vang-4890123.html "Nghiên cứu lập sàn giao dịch vàng")
+###  [Giá vàng thế giới quay đầu tăng mạnh ](https://vnexpress.net/gia-vang-the-gioi-quay-dau-tang-manh-4889919.html "Giá vàng thế giới quay đầu tăng mạnh")
+[ Giá mỗi ounce vàng lên cao nhất 2 tuần, sau khi ông Trump dọa áp thuế nhập khẩu mới với Apple và châu Âu. ](https://vnexpress.net/gia-vang-the-gioi-quay-dau-tang-manh-4889919.html "Giá vàng thế giới quay đầu tăng mạnh")
+###  [Giá vàng thế giới lấy lại mốc 3.300 USD ](https://vnexpress.net/gia-vang-the-gioi-lay-lai-moc-3-300-usd-4888520.html "Giá vàng thế giới lấy lại mốc 3.300 USD")
+[ Sau vài phiên giảm, vàng quay lại mốc 3.300 USD một ounce, khi USD mất giá và nhu cầu trú ẩn của nhà đầu tư tăng cao. ](https://vnexpress.net/gia-vang-the-gioi-lay-lai-moc-3-300-usd-4888520.html "Giá vàng thế giới lấy lại mốc 3.300 USD")
+### [Lựa chọn khó khăn với Iran sau đòn tập kích của Mỹ](https://vnexpress.net/lua-chon-kho-khan-voi-iran-sau-don-tap-kich-cua-my-4904746.html "Lựa chọn khó khăn với Iran sau đòn tập kích của Mỹ")
+### [Ảnh vệ tinh cơ sở hạt nhân Fordow sau đòn tập kích của Mỹ](https://vnexpress.net/anh-ve-tinh-co-so-hat-nhan-fordow-sau-don-tap-kich-cua-my-4904786.html "Ảnh vệ tinh cơ sở hạt nhân Fordow sau đòn tập kích của Mỹ")
+### [Dùng ma túy khi lái xe, tài xế gây tai nạn liên hoàn](https://vnexpress.net/dung-ma-tuy-khi-lai-xe-tai-xe-gay-tai-nan-lien-hoan-4904802.html "Dùng ma túy khi lái xe, tài xế gây tai nạn liên hoàn")
+### [Lãnh tụ tối cao Iran có thể đã chọn ba ứng viên kế nhiệm](https://vnexpress.net/lanh-tu-toi-cao-iran-co-the-da-chon-ba-ung-vien-ke-nhiem-4904760.html "Lãnh tụ tối cao Iran có thể đã chọn ba ứng viên kế nhiệm")
+### [Sứ quán Việt Nam tại Israel ra thông báo khẩn sau vụ Mỹ không kích Iran](https://vnexpress.net/su-quan-viet-nam-tai-israel-ra-thong-bao-khan-sau-vu-my-khong-kich-iran-4904787.html "Sứ quán Việt Nam tại Israel ra thông báo khẩn sau vụ Mỹ không kích Iran")
+[CĐV săn đón Nguyễn Xuân Son trong ngày Nam Định đăng quang](https://vnexpress.net/cdv-san-don-nguyen-xuan-son-trong-ngay-nam-dinh-dang-quang-4904827.html "CĐV săn đón Nguyễn Xuân Son trong ngày Nam Định đăng quang")
+[ Quán cà phê trang trí gần 1.000 con gấu hút khách tại TP HCM ](https://vnexpress.net/quan-ca-phe-trang-tri-gan-1-000-con-gau-hut-khach-tai-tp-hcm-4904474.html "Quán cà phê trang trí gần 1.000 con gấu hút khách tại TP HCM")
+[ Nam Định nhận chức vô địch V-League 2024-2025 ](https://vnexpress.net/nam-dinh-nhan-chuc-vo-dich-v-league-2024-2025-4904773.html "Nam Định nhận chức vô địch V-League 2024-2025")
+[Siêu nhà máy Xiaomi vắng bóng người, tự động 91%](https://vnexpress.net/sieu-nha-may-vang-bong-nguoi-tu-dong-91-cua-xiaomi-4903851.html "Siêu nhà máy Xiaomi vắng bóng người, tự động 91%")
+[ Đàm Vĩnh Hưng: 'Tôi mong khỏe mạnh, sống lâu bên con' ](https://vnexpress.net/dam-vinh-hung-toi-mong-khoe-manh-song-lau-ben-con-4903116.html "Đàm Vĩnh Hưng: 'Tôi mong khỏe mạnh, sống lâu bên con'")
+Tạo tài khoản & đăng nhập thành công 
+### Đăng ký Newsletter thành công!
+Cảm ơn bạn đã đăng ký! Hãy kiểm tra email mỗi ngày để nhận bản tin cập nhật từ VnExpress
+### Bạn đã đăng ký VnExpress Newsletter!
+Cảm ơn bạn đã đăng ký! Hãy kiểm tra email mỗi ngày để nhận bản tin cập nhật từ VnExpress
