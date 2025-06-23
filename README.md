@@ -59,6 +59,9 @@ Create a `.env` file in the root directory with the following variables:
 - Required environment variables will be listed here
 - Refer to `.env.example` for a template
 
-## Dependencies
+## Demo [Screencast from 2025-06-23 10-30-55.webm](https://github.com/user-attachments/assets/af7cc215-20ac-4bac-a806-994f3a50cb2c)
+
 
 All required packages are listed in `requirements.txt`
+
+
