@@ -59,7 +59,9 @@ Create a `.env` file in the root directory with the following variables:
 - Required environment variables will be listed here
 - Refer to `.env.example` for a template
 
-## Demo https://youtu.be/JX85doSloPg
+## Demo [![Watch the video](https://img.youtube.com/vi/JX85doSloPg/hqdefault.jpg)](https://youtu.be/JX85doSloPg)
+
+
 
 
 All required packages are listed in `requirements.txt`
