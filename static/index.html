@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web search AI agent</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #0d1117;
+        --bg-secondary: #161b22;
+        --bg-tertiary: #21262d;
+        --bg-hover: #30363d;
+        --border-color: #30363d;
+        --text-primary: #f0f6fc;
+        --text-secondary: #8b949e;
+        --text-muted: #656d76;
+        --accent-primary: #238636;
+        --accent-hover: #2ea043;
+        --user-bg: #0969da;
+        --assistant-bg: var(--bg-tertiary);
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        --gradient: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+        --code-bg: #0d1117;
+        --blockquote-border: #fd7e14;
+        --link-color: #58a6ff;
+        --highlight-bg: #ffd33d22;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+          Helvetica, Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        height: 100vh;
+        overflow: hidden;
+        line-height: 1.6;
+      }
+
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+      }
+
+      .header {
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+      }
+
+      .header h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .header .logo {
+        width: 24px;
+        height: 24px;
+        background: var(--gradient);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: white;
+      }
+
+      .chat-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0;
+        scroll-behavior: smooth;
+        background: var(--bg-primary);
+      }
+
+      .welcome-screen {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .welcome-screen .welcome-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--gradient);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .welcome-screen h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .welcome-screen p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 500px;
+      }
+
+      .message {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba(48, 54, 61, 0.3);
+        animation: fadeInUp 0.3s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .user-message {
+        background: var(--bg-secondary);
+      }
+
+      .assistant-message {
+        background: var(--bg-primary);
+      }
+
+      .message-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .user-avatar {
+        background: var(--user-bg);
+        color: white;
+      }
+
+      .assistant-avatar {
+        background: var(--gradient);
+        color: white;
+      }
+
+      .message-content {
+        flex: 1;
+        padding-top: 0.2rem;
+      }
+
+      .message-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        word-wrap: break-word;
+      }
+
+      /* Enhanced Rich text formatting */
+      .message-text h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1.5rem 0 0.75rem;
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--accent-primary);
+        padding-bottom: 0.5rem;
+      }
+
+      .message-text h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.25rem 0 0.5rem;
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.25rem;
+      }
+
+      .message-text h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 1rem 0 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .message-text h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0.75rem 0 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .message-text p {
+        margin: 0.75rem 0;
+        color: var(--text-primary);
+      }
+
+      .message-text ul,
+      .message-text ol {
+        margin: 0.75rem 0;
+        padding-left: 1.5rem;
+        color: var(--text-primary);
+      }
+
+      .message-text li {
+        margin: 0.25rem 0;
+        line-height: 1.5;
+      }
+
+      .message-text ul li {
+        list-style-type: disc;
+      }
+
+      .message-text ol li {
+        list-style-type: decimal;
+      }
+
+      .message-text strong {
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .message-text em {
+        font-style: italic;
+        color: var(--text-secondary);
+      }
+
+      .message-text a {
+        color: var(--link-color);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .message-text a:hover {
+        border-bottom-color: var(--link-color);
+      }
+
+      .message-text pre {
+        background: var(--code-bg);
+        border: 1px solid var(--border-color);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .message-text code {
+        background: var(--bg-hover);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.9em;
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+      }
+
+      .message-text pre code {
+        background: transparent;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .message-text blockquote {
+        border-left: 4px solid var(--blockquote-border);
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background: var(--bg-tertiary);
+        border-radius: 0 8px 8px 0;
+        font-style: italic;
+        color: var(--text-secondary);
+      }
+
+      .message-text blockquote p {
+        margin: 0.5rem 0;
+      }
+
+      .message-text hr {
+        border: none;
+        height: 2px;
+        background: var(--border-color);
+        margin: 1.5rem 0;
+        border-radius: 1px;
+      }
+
+      .message-text table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        background: var(--bg-tertiary);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .message-text th,
+      .message-text td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .message-text th {
+        background: var(--bg-hover);
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .message-text tr:last-child td {
+        border-bottom: none;
+      }
+
+      .message-text mark {
+        background: var(--highlight-bg);
+        padding: 0.1rem 0.2rem;
+        border-radius: 3px;
+        color: var(--text-primary);
+      }
+
+      .typing-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+      .typing-dots {
+        display: inline-flex;
+        gap: 2px;
+      }
+
+      .typing-dots span {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        animation: typing 1.4s infinite;
+      }
+
+      .typing-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.4;
+        }
+        30% {
+          transform: translateY(-8px);
+          opacity: 1;
+        }
+      }
+
+      .source-links {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-tertiary);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+
+      .source-links h4 {
+        color: var(--text-primary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .source-link {
+        display: block;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        background: var(--bg-hover);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .source-link:hover {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+        transform: translateY(-1px);
+      }
+
+      .source-title {
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .source-snippet {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        margin: 0.5rem 0;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .source-domain {
+        color: var(--accent-primary);
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .source-domain i {
+        font-size: 0.75rem;
+      }
+
+      .processing-status {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: var(--bg-tertiary);
+        border-radius: 8px;
+        border-left: 3px solid var(--accent-primary);
+        display: none;
+      }
+
+      .processing-status.active {
+        display: block;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      .processing-status h4 {
+        color: var(--accent-primary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .processing-status .spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .processing-link {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        background: var(--bg-hover);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+      }
+
+      .input-section {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+        padding: 1.5rem 2rem 2rem;
+        position: relative;
+      }
+
+      .input-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .input-wrapper {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0.75rem 3rem 0.75rem 1rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-wrapper:focus-within {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.1);
+      }
+
+      .message-input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text-primary);
+        font-size: 1rem;
+        resize: none;
+        min-height: 24px;
+        max-height: 120px;
+        line-height: 1.5;
+        font-family: inherit;
+      }
+
+      .message-input::placeholder {
+        color: var(--text-muted);
+      }
+
+      .send-button {
+        position: absolute;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        width: 32px;
+        height: 32px;
+        background: var(--gradient);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(35, 134, 54, 0.3);
+      }
+
+      .send-button:hover:not(:disabled) {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+      }
+
+      .send-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .input-hint {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        margin-top: 0.75rem;
+      }
+
+      /* Scrollbar styling */
+      .chat-container::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .chat-container::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+      }
+
+      .chat-container::-webkit-scrollbar-thumb {
+        background: var(--bg-hover);
+        border-radius: 3px;
+      }
+
+      .chat-container::-webkit-scrollbar-thumb:hover {
+        background: var(--border-color);
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .header {
+          padding: 1rem;
+        }
+
+        .message-wrapper {
+          padding: 0 1rem;
+        }
+
+        .input-section {
+          padding: 1rem;
+        }
+
+        .welcome-screen h2 {
+          font-size: 1.5rem;
+        }
+
+        .welcome-screen p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="header">
+        <h1>
+          <div class="logo">AI</div>
+          Web search AI agent
+        </h1>
+      </header>
+
+      <div class="chat-container" id="chat-container">
+        <div class="welcome-screen" id="welcome-screen">
+          <div class="welcome-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h2>Web search AI agent</h2>
+          <p>
+            Ask me anything. I'll search the latest sources and provide you with
+            comprehensive insights with rich text formatting.
+          </p>
+        </div>
+      </div>
+
+      <div class="input-section">
+        <div class="input-container">
+          <form onsubmit="handleSubmit(event)" id="message-form">
+            <div class="input-wrapper">
+              <textarea
+                id="message-input"
+                class="message-input"
+                placeholder="Ask about AI news, research, companies, or trends..."
+                rows="1"
+                required
+              ></textarea>
+              <button type="submit" id="send-button" class="send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+          <div class="input-hint">
+            Press Enter to send, Shift + Enter for new line
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      class AINewsSearch {
+        constructor() {
+          this.messageInput = document.getElementById("message-input");
+          this.chatContainer = document.getElementById("chat-container");
+          this.welcomeScreen = document.getElementById("welcome-screen");
+          this.sendButton = document.getElementById("send-button");
+          this.messageForm = document.getElementById("message-form");
+
+          this.ws = null;
+          this.isProcessing = false;
+          this.currentProcessingMessage = null;
+
+          this.initializeWebSocket();
+          this.setupEventListeners();
+        }
+
+        initializeWebSocket() {
+          const protocol =
+            window.location.protocol === "https:" ? "wss:" : "ws:";
+          this.ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
+
+          this.ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.status) {
+              this.updateProcessingStatus(data.status);
+            }
+          };
+
+          this.ws.onclose = () => {
+            console.log("WebSocket connection closed");
+            setTimeout(() => {
+              this.initializeWebSocket();
+            }, 2000);
+          };
+
+          this.ws.onerror = (error) => {
+            console.error("WebSocket error:", error);
+          };
+        }
+
+        setupEventListeners() {
+          // Auto-resize textarea
+          this.messageInput.addEventListener("input", () => {
+            this.messageInput.style.height = "auto";
+            this.messageInput.style.height =
+              Math.min(this.messageInput.scrollHeight, 120) + "px";
+          });
+
+          // Handle Enter key
+          this.messageInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              this.handleSubmit(e);
+            }
+          });
+        }
+
+        hideWelcomeScreen() {
+          if (this.welcomeScreen.style.display !== "none") {
+            this.welcomeScreen.style.display = "none";
+          }
+        }
+
+        // Enhanced method to convert markdown-like text to HTML
+        convertToRichText(text) {
+          // Basic markdown to HTML conversion
+          let html = text
+            // Headers
+            .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+            .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+            .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+            // Bold
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+            .replace(/__(.*?)__/g, "<strong>$1</strong>")
+            // Italic
+            .replace(/\*(.*?)\*/g, "<em>$1</em>")
+            .replace(/_(.*?)_/g, "<em>$1</em>")
+            // Code blocks
+            .replace(/```([\s\S]*?)```/g, "<pre><code>$1</code></pre>")
+            // Inline code
+            .replace(/`([^`]+)`/g, "<code>$1</code>")
+            // Links
+            .replace(
+              /\[([^\]]+)\]\(([^)]+)\)/g,
+              '<a href="$2" target="_blank">$1</a>'
+            )
+            // Line breaks
+            .replace(/\n\n/g, "</p><p>")
+            .replace(/\n/g, "<br>");
+
+          // Handle lists
+          html = html.replace(/^\* (.+)$/gim, "<li>$1</li>");
+          html = html.replace(/^\d+\. (.+)$/gim, "<li>$1</li>");
+
+          // Wrap list items in ul/ol tags
+          html = html.replace(/(<li>.*<\/li>)/gs, (match) => {
+            if (match.includes("1. ")) {
+              return "<ol>" + match + "</ol>";
+            } else {
+              return "<ul>" + match + "</ul>";
+            }
+          });
+
+          // Handle blockquotes
+          html = html.replace(
+            /^> (.+)$/gim,
+            "<blockquote><p>$1</p></blockquote>"
+          );
+
+          // Wrap in paragraphs if not already wrapped
+          if (
+            !html.includes("<p>") &&
+            !html.includes("<h") &&
+            !html.includes("<ul>") &&
+            !html.includes("<ol>")
+          ) {
+            html = "<p>" + html + "</p>";
+          }
+
+          return html;
+        }
+
+        addMessage(content, isUser = false, results = []) {
+          this.hideWelcomeScreen();
+
+          const messageDiv = document.createElement("div");
+          messageDiv.className = `message ${
+            isUser ? "user-message" : "assistant-message"
+          }`;
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "message-wrapper";
+
+          const avatar = document.createElement("div");
+          avatar.className = `avatar ${
+            isUser ? "user-avatar" : "assistant-avatar"
+          }`;
+          avatar.innerHTML = isUser ? "U" : "AI";
+
+          const messageContent = document.createElement("div");
+          messageContent.className = "message-content";
+
+          const messageText = document.createElement("div");
+          messageText.className = "message-text";
+
+          if (isUser) {
+            // For user messages, use textContent to prevent XSS
+            messageText.textContent = content;
+          } else {
+            // For AI responses, convert to rich text and use innerHTML
+            const richTextContent = this.convertToRichText(content);
+            messageText.innerHTML = richTextContent;
+          }
+
+          messageContent.appendChild(messageText);
+
+          // Add source results if available
+          if (results && results.length > 0) {
+            const sourceLinks = document.createElement("div");
+            sourceLinks.className = "source-links";
+
+            const sourceTitle = document.createElement("h4");
+            sourceTitle.innerHTML = '<i class="fas fa-link"></i> Sources';
+            sourceLinks.appendChild(sourceTitle);
+
+            results.forEach((result) => {
+              const linkWrapper = document.createElement("div");
+              linkWrapper.className = "source-link-wrapper";
+
+              const linkElement = document.createElement("a");
+              linkElement.href = result.link;
+              linkElement.target = "_blank";
+              linkElement.className = "source-link";
+
+              const titleElement = document.createElement("div");
+              titleElement.className = "source-title";
+              titleElement.textContent =
+                result.title || new URL(result.link).hostname;
+
+              const snippetElement = document.createElement("div");
+              snippetElement.className = "source-snippet";
+              snippetElement.textContent = result.snippet || "";
+
+              const domainElement = document.createElement("div");
+              domainElement.className = "source-domain";
+              domainElement.innerHTML = `<i class="fas fa-external-link-alt"></i> ${
+                result.displayLink ||
+                new URL(result.link).hostname.replace("www.", "")
+              }`;
+
+              linkElement.appendChild(titleElement);
+              if (result.snippet) linkElement.appendChild(snippetElement);
+              linkElement.appendChild(domainElement);
+
+              sourceLinks.appendChild(linkElement);
+            });
+
+            messageContent.appendChild(sourceLinks);
+          }
+
+          wrapper.appendChild(avatar);
+          wrapper.appendChild(messageContent);
+          messageDiv.appendChild(wrapper);
+          this.chatContainer.appendChild(messageDiv);
+
+          this.scrollToBottom();
+          return messageDiv;
+        }
+
+        addTypingIndicator() {
+          const messageDiv = document.createElement("div");
+          messageDiv.className = "message assistant-message";
+          messageDiv.id = "typing-indicator";
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "message-wrapper";
+
+          const avatar = document.createElement("div");
+          avatar.className = "avatar assistant-avatar";
+          avatar.innerHTML = "AI";
+
+          const messageContent = document.createElement("div");
+          messageContent.className = "message-content";
+
+          const typingDiv = document.createElement("div");
+          typingDiv.className = "typing-indicator";
+          typingDiv.innerHTML = `
+            <span>Searching and analyzing</span>
+            <div class="typing-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          `;
+
+          messageContent.appendChild(typingDiv);
+
+          // Add processing status container
+          const processingStatus = document.createElement("div");
+          processingStatus.className = "processing-status";
+          processingStatus.id = "processing-status";
+          processingStatus.innerHTML = `
+            <h4><i class="fas fa-spinner spinner"></i> Processing</h4>
+            <div class="processing-link" id="processing-link">Initializing search...</div>
+          `;
+
+          messageContent.appendChild(processingStatus);
+
+          wrapper.appendChild(avatar);
+          wrapper.appendChild(messageContent);
+          messageDiv.appendChild(wrapper);
+          this.chatContainer.appendChild(messageDiv);
+
+          this.scrollToBottom();
+          return messageDiv;
+        }
+
+        updateProcessingStatus(status) {
+          const processingStatus = document.getElementById("processing-status");
+          const processingLink = document.getElementById("processing-link");
+
+          if (processingStatus && processingLink) {
+            processingStatus.classList.add("active");
+            processingLink.textContent = status;
+          }
+        }
+
+        removeTypingIndicator() {
+          const typingIndicator = document.getElementById("typing-indicator");
+          if (typingIndicator) {
+            typingIndicator.remove();
+          }
+        }
+
+        scrollToBottom() {
+          this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
+        }
+
+        setInputDisabled(disabled) {
+          this.messageInput.disabled = disabled;
+          this.sendButton.disabled = disabled;
+          this.isProcessing = disabled;
+        }
+
+        async handleSubmit(event) {
+          event.preventDefault();
+
+          const message = this.messageInput.value.trim();
+          if (!message || this.isProcessing) return;
+
+          // Add user message
+          this.addMessage(message, true);
+
+          // Clear input and reset height
+          this.messageInput.value = "";
+          this.messageInput.style.height = "auto";
+
+          // Disable input and show typing indicator
+          this.setInputDisabled(true);
+          this.currentProcessingMessage = this.addTypingIndicator();
+
+          try {
+            const response = await fetch("/search", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ query: message }),
+            });
+
+            const data = await response.json();
+
+            // Remove typing indicator
+            this.removeTypingIndicator();
+
+            if (response.ok) {
+              this.addMessage(data.answer, false, data.results);
+            } else {
+              this.addMessage(
+                `Sorry, an error occurred: ${data.detail}`,
+                false
+              );
+            }
+          } catch (error) {
+            this.removeTypingIndicator();
+            this.addMessage(
+              `Sorry, an error occurred: ${error.message}`,
+              false
+            );
+          } finally {
+            this.setInputDisabled(false);
+            this.messageInput.focus();
+          }
+        }
+      }
+
+      // Initialize the application
+      const app = new AINewsSearch();
+
+      // Global function for form submission (fallback)
+      function handleSubmit(event) {
+        app.handleSubmit(event);
+      }
+    </script>
+  </body>
+</html>
