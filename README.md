@@ -63,7 +63,9 @@ Create a `.env` file in the root directory with the following variables:
 
 
 
-https://github.com/user-attachments/assets/10895b65-f1d1-4361-bb3b-f61154097d07
+
+
+https://github.com/user-attachments/assets/45f86fc1-25ba-4cb0-a823-ae10c49b1a1a
 
 
 
